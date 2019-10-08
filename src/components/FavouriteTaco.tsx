@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Taco from "./Taco";
+import Taco, { ITaco } from "./Taco";
 import * as api from "../utils/api";
 
 class FavouriteTaco extends Component {
     state = {
         username: "",
-        taco: {}
+        taco: null
     }
     render() {
-        const { username, taco }: { username: string, taco: any } = this.state;
+        const { username, taco }: { username: string, taco: ITaco | null } = this.state;
         return (
             <div>
               <form onSubmit={this.handleSubmit}>

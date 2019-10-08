@@ -10,9 +10,9 @@ export interface ITaco {
     seasoning: string
 }
 const Taco = (props: any) => {
-    const taco: ITaco = props.taco;
+    const taco: ITaco | null = props.taco;
     return (
-        <div className="taco-card">
+        taco && <div className="taco-card">
             <h3>{taco.title}</h3>
             <h4>Ingredients:</h4>
             <div className="ingredientContainer">
