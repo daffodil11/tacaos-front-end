@@ -1,0 +1,25 @@
+.taco-card {
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    padding-bottom: 8px;
+    background-color: white;
+}
+
+.ingredientContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.ingredientContainer ul {
+    list-style: none;
+}
+
+.ingredientContainer ul li::before {
+    content: "\2605";
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+    color: #008080;
+}

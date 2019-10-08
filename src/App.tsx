@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Router, RouteComponentProps, Link } from "@reach/router";
-import Tacos from "./components/Tacos";
+import Tacos from "./components/TacoList";
 import FavouriteTaco from "./components/FavouriteTaco";
 import ChangeFavouriteTaco from "./components/ChangeFavouriteTaco";
 import './App.css';
