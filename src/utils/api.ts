@@ -8,3 +8,9 @@ export async function getTacos(): Promise<Array<ITaco[]>>{
     console.log(data);
     return data.tacos;
 }
+
+export async function getFavouriteTaco(username: string): Promise<ITaco> {
+    const { data }: { data: any } = await axios.get(BASE_URL + "/users/" + username + "/taco");
+    console.log(data);
+    return data.taco;
+}

@@ -1,12 +1,30 @@
 import React, { Component } from 'react';
+import Taco from "./Taco";
+import * as api from "../utils/api";
 
 class FavouriteTaco extends Component {
+    state = {
+        username: "",
+        taco: {}
+    }
     render() {
+        const { username, taco }: { username: string, taco: any } = this.state;
         return (
             <div>
-                User's favourite taco                
+              <form onSubmit={this.handleSubmit}>
+                  <input type="text" value={username} onChange={this.handleChange}></input>
+                  <button type="submit">Submit</button>
+              </form>
+              <Taco taco={taco} />              
             </div>
         );
+    }
+    handleChange = (event: any): void => {
+        this.setState({ username: event.target.value });
+    }
+    handleSubmit = (event: any): void => {
+        event.preventDefault();
+        api.getFavouriteTaco(this.state.username).then(taco => this.setState({ taco }));
     }
 }
 
